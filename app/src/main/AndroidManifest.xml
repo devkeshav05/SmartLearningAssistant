@@ -16,6 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SmartLearningAssistant">
 
+        <!-- Main activity with capture button -->
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -24,6 +25,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- New activity for displaying OCR results -->
+        <activity android:name=".ResultActivity" />
+
+        <!-- FileProvider for high-resolution image capture -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
 
     </application>
 
