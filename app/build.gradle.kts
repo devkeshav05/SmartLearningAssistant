@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.example.smartlearningassistant"
-    compileSdk = 34 // 36 is not stable yet, better use 34
+    compileSdk = 34 // keep stable SDK for now
 
     defaultConfig {
         applicationId = "com.example.smartlearningassistant"
@@ -42,7 +42,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
 
-    // ML Kit On-device Text Recognition (offline)
+    // ML Kit - Text Recognition
     implementation("com.google.mlkit:text-recognition:16.0.0")
 
     testImplementation(libs.junit)
