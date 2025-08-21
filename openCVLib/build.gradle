@@ -15,7 +15,7 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false   // ✅ FIXED HERE
+            minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
@@ -27,5 +27,18 @@ android {
 
     kotlinOptions {
         jvmTarget = "17"
+        freeCompilerArgs += "-opt-in=kotlin.ExperimentalUnsignedTypes"
+    }
+
+    sourceSets {
+        main {
+            java.srcDirs = ['java/src']
+            res.srcDirs = ['java/res']
+            jniLibs.srcDirs = ['native/libs']
+        }
+    }
+
+    buildFeatures {
+        buildConfig = true
     }
 }
